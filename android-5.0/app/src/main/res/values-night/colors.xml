@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ This file is part of Hi！Bili
+  ~ Copyright (C) 2026 chumianyi
+  ~ SPDX-License-Identifier: GPL-3.0-or-later
+  -->
+<resources>
+    <color name="miuix_primary">#1565C0</color>
+    <color name="bg_page">#0E1621</color>
+    <color name="bg_card">#1A2230</color>
+    <color name="text_primary">#E8EAED</color>
+    <color name="text_secondary">#9AA4B0</color>
+    <color name="divider">#2A3340</color>
+</resources>

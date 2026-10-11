@@ -1,0 +1,80 @@
+# This file is part of Hi！Bili.
+#
+# Hi！Bili is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# Hi！Bili is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with Hi！Bili.  If not, see <http://www.gnu.org/licenses/>.
+#
+# ---------------------------------------------------------------------------
+# Hi！Bili Android 1.0 参考版本构建
+#
+# 已知限制：
+#   1. minSdk=1 属于极早期平台，现代 cmdline-tools 对 platforms;android-4
+#      已标记为 obsolete，sdkmanager 仍可安装但可能需要 --include_obsolete。
+#   2. 本仓库使用第一代 Apache Ant 构建（build.xml），需要配套的旧版
+#      build-tools（如 19.1）与 android-4 平台骨架。
+#   3. 该 workflow 主要用于展示构建流程；若旧平台组件在最新 SDK 源中下架，
+#      可能需要在自建镜像中保留 android-4 平台包。
+# ---------------------------------------------------------------------------
+name: build-android-1.0
+
+on:
+  push:
+    paths:
+      - 'android-1.0/**'
+      - '.github/workflows/build-android-1.0.yml'
+  pull_request:
+    paths:
+      - 'android-1.0/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: android-1.0
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 8
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '8'
+
+      - name: Install Ant
+        run: sudo apt-get update && sudo apt-get install -y ant
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Accept licenses & install old platform
+        run: |
+          yes | sdkmanager --licenses || true
+          # android-4 为 obsolete，需加 --include_obsolete
+          sdkmanager --include_obsolete "platforms;android-4" "build-tools;19.1.0" "platform-tools" || \
+          echo "::warning::旧平台 android-4 / build-tools 19.1 安装失败，请确认 SDK 源是否仍提供该组件。"
+
+      - name: Write local.properties
+        run: echo "sdk.dir=$ANDROID_HOME" > local.properties
+
+      - name: Build debug APK with Ant
+        run: ant debug || echo "::warning::Ant 构建未成功（可能因旧平台组件缺失）。此为参考版本，不强制产出 APK。"
+
+      - name: Upload APK artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hibili-android-1.0-apk
+          path: android-1.0/bin/*.apk
+          if-no-files-found: warn

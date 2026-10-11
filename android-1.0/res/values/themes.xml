@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This file is part of Hi！Bili.
+
+  Hi！Bili is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  Hi！Bili is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with Hi！Bili.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<resources>
+    <!--
+      第一代 Android 蓝色主题。
+      以 API 1 即存在的 Theme.Light 为父主题，
+      仅覆盖 windowBackground 与基础文字外观，避免引用高版本属性。
+      标题栏蓝色渐变通过各布局顶部的自定义 View 实现，保证兼容性。
+    -->
+    <style name="HiBiliTheme" parent="@android:style/Theme.Light">
+        <item name="android:windowBackground">@drawable/bg_root</item>
+        <item name="android:textColor">@color/text_dark</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+</resources>

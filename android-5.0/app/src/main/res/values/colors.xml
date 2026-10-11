@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ This file is part of Hi！Bili
+  ~ Copyright (C) 2026 chumianyi
+  ~ SPDX-License-Identifier: GPL-3.0-or-later
+  -->
+<resources>
+    <!-- Miuix blue palette -->
+    <color name="miuix_primary">#1E88E5</color>
+    <color name="miuix_primary_dark">#1565C0</color>
+    <color name="miuix_primary_light">#64B5F6</color>
+    <color name="miuix_accent">#00BCD4</color>
+
+    <color name="bg_page">#F5F7FA</color>
+    <color name="bg_card">#FFFFFF</color>
+
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_on_primary">#FFFFFF</color>
+
+    <color name="divider">#E0E0E0</color>
+
+    <color name="status_bar_blue">#1565C0</color>
+    <color name="gradient_start">#1E88E5</color>
+    <color name="gradient_end">#1565C0</color>
+</resources>

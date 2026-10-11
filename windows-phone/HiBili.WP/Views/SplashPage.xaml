@@ -1,0 +1,34 @@
+<!--
+  Hi!Bili - splash screen: blue background + icon + title.
+  SPDX-License-Identifier: GPL-3.0-or-later
+  Copyright (C) 2024 HiBili Team
+-->
+<phone:PhoneApplicationPage
+    x:Class="HiBili.WP.Views.SplashPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+
+    <Grid Background="{StaticResource TitleBarBrush}">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Image Source="/Assets/ApplicationIcon.png"
+                   Width="160" Height="160"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,24" />
+            <TextBlock Text="Hi！Bili"
+                       Style="{StaticResource LightTitleText}"
+                       HorizontalAlignment="Center" />
+            <TextBlock Text="Windows Phone 参考版本"
+                       Style="{StaticResource SubtitleText}"
+                       HorizontalAlignment="Center"
+                       Margin="0,8,0,0" />
+        </StackPanel>
+    </Grid>
+
+</phone:PhoneApplicationPage>

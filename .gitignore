@@ -1,0 +1,29 @@
+# Build artifacts
+**/build/
+**/out/
+**/bin/
+**/obj/
+**/*.apk
+**/*.aab
+**/*.ipk
+**/*.xap
+**/*.appx
+**/*.class
+**/*.dex
+
+# Gradle
+**/.gradle/
+**/local.properties
+
+# IDE
+**/.idea/
+**/*.iml
+**/.vscode/
+**/.DS_Store
+
+# Node
+**/node_modules/
+
+# Temp
+**/*.tmp
+**/*.log

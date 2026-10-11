@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ This file is part of Hi！Bili
+  ~ Copyright (C) 2026 chumianyi
+  ~ SPDX-License-Identifier: GPL-3.0-or-later
+  -->
+<resources>
+
+    <style name="Theme.HiBili" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/miuix_primary</item>
+        <item name="colorPrimaryDark">@color/status_bar_blue</item>
+        <item name="colorAccent">@color/miuix_accent</item>
+        <item name="android:windowBackground">@color/bg_page</item>
+        <item name="android:statusBarColor">@color/status_bar_blue</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+    </style>
+
+    <style name="Theme.HiBili.Splash" parent="Theme.HiBili">
+        <item name="android:windowBackground">@drawable/bg_gradient_blue</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="Miuix.Card" parent="android:Widget">
+        <item name="android:background">@drawable/shape_card</item>
+        <item name="android:padding">@dimen/padding_page</item>
+    </style>
+
+    <style name="Miuix.PrimaryButton">
+        <item name="android:background">@drawable/btn_blue</item>
+        <item name="android:textColor">@color/text_on_primary</item>
+        <item name="android:textSize">@dimen/text_body</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Miuix.Input">
+        <item name="android:background">@drawable/shape_input</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+        <item name="android:textSize">@dimen/text_body</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:hintTextColor">@color/text_secondary</item>
+    </style>
+
+    <style name="Miuix.Title">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">@dimen/text_title</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Miuix.Caption">
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textSize">@dimen/text_caption</item>
+    </style>
+
+</resources>

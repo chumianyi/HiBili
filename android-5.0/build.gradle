@@ -1,0 +1,26 @@
+// Top-level build file for Hi！Bili
+// This file is part of Hi！Bili
+// Copyright (C) 2026 chumianyi
+// SPDX-License-Identifier: GPL-3.0-or-later
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // AGP 7.0.4 is the last line that still reliably supports minSdk 21 + JDK 11
+        classpath 'com.android.tools.build:gradle:7.0.4'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ This file is part of Hi！Bili
+  ~ Copyright (C) 2026 chumianyi
+  ~ SPDX-License-Identifier: GPL-3.0-or-later
+  -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+        android:color="#33FFFFFF">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/miuix_primary" />
+            <corners android:radius="@dimen/radius_button" />
+        </shape>
+    </item>
+</ripple>

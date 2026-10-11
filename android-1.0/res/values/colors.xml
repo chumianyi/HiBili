@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This file is part of Hi！Bili.
+
+  Hi！Bili is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  Hi！Bili is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with Hi！Bili.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<resources>
+    <!-- 蓝色主题色板 -->
+    <color name="blue_500">#2196F3</color>
+    <color name="blue_700">#1976D2</color>
+    <color name="blue_100">#BBDEFB</color>
+    <color name="bg_light_blue">#E3F2FD</color>
+
+    <color name="title_gradient_top">#1976D2</color>
+    <color name="title_gradient_bottom">#2196F3</color>
+
+    <color name="text_dark">#333333</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="input_border">#2196F3</color>
+    <color name="input_bg">#FFFFFF</color>
+    <color name="card_bg">#F5FAFF</color>
+</resources>

@@ -1,0 +1,136 @@
+<!--
+  Hi!Bili - home page: Panorama with placeholder hubs.
+  SPDX-License-Identifier: GPL-3.0-or-later
+  Copyright (C) 2024 HiBili Team
+-->
+<phone:PhoneApplicationPage
+    x:Class="HiBili.WP.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!-- ApplicationBar: About -->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True"
+                              BackgroundColor="#1565C0" ForegroundColor="#FFFFFF">
+            <shell:ApplicationBarIconButton
+                IconUri="/Assets/ApplicationIcon.png"
+                Text="关于"
+                Click="AboutButton_Click" />
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+    <Grid Background="{StaticResource PageBackgroundBrush}">
+        <controls:Panorama x:Name="RootPanorama"
+                           Foreground="#90CAF9"
+                           Background="Transparent">
+            <controls:Panorama.Title>
+                <TextBlock Text="Hi！Bili" FontFamily="Segoe UI Light" FontSize="44" />
+            </controls:Panorama.Title>
+
+            <!-- ===== 首页：示例推荐视频卡片 ===== -->
+            <controls:PanoramaItem Header="首页">
+                <StackPanel Margin="0,20,0,0" Width="440">
+                    <TextBlock x:Name="GreetingText"
+                               Text="你好，Bilibili 用户"
+                               Style="{StaticResource LightTitleText}"
+                               TextWrapping="Wrap" />
+
+                    <!-- 示例视频卡片 1 -->
+                    <Border Background="#16283F" Margin="0,24,0,12" Padding="10"
+                            BorderBrush="{StaticResource DividerBrush}" BorderThickness="1">
+                        <StackPanel>
+                            <Border Background="{StaticResource TileBrush}" Height="120">
+                                <TextBlock Text="封面 · 科技" Foreground="#FFFFFF"
+                                           HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                            <TextBlock Text="【4K】带你看懂 Windows Phone 的最后三年"
+                                       Foreground="#FFFFFF" Margin="0,8,0,0" TextWrapping="Wrap" />
+                            <TextBlock Text="UP：科技早报 · 播放 12.4万"
+                                       Style="{StaticResource SubtitleText}" Margin="0,4,0,0" />
+                        </StackPanel>
+                    </Border>
+
+                    <!-- 示例视频卡片 2 -->
+                    <Border Background="#16283F" Padding="10"
+                            BorderBrush="{StaticResource DividerBrush}" BorderThickness="1">
+                        <StackPanel>
+                            <Border Background="{StaticResource PhoneAccentBrush}" Height="120">
+                                <TextBlock Text="封面 · 动画" Foreground="#FFFFFF"
+                                           HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                            <TextBlock Text="Hi！Bili：一个第三方客户端的诞生"
+                                       Foreground="#FFFFFF" Margin="0,8,0,0" TextWrapping="Wrap" />
+                            <TextBlock Text="UP：HiBili Team · 播放 8.1万"
+                                       Style="{StaticResource SubtitleText}" Margin="0,4,0,0" />
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </controls:PanoramaItem>
+
+            <!-- ===== 动态：示例动态卡片 ===== -->
+            <controls:PanoramaItem Header="动态">
+                <StackPanel Margin="0,20,0,0" Width="440">
+                    <TextBlock Text="动态"
+                               Style="{StaticResource LightTitleText}" />
+
+                    <Border Background="#16283F" Margin="0,20,0,12" Padding="10"
+                            BorderBrush="{StaticResource DividerBrush}" BorderThickness="1">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Border Background="{StaticResource PhoneAccentBrush}"
+                                        Width="36" Height="36">
+                                    <TextBlock Text="风" Foreground="#FFFFFF"
+                                               HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <TextBlock Text="  晚风启事录" Foreground="#90CAF9" VerticalAlignment="Center" />
+                            </StackPanel>
+                            <TextBlock Text="今日打卡：用 Windows Phone 刷 B 站的第 100 天。#HiBili#"
+                                       Foreground="#E3F2FD" Margin="0,8,0,0" TextWrapping="Wrap" />
+                            <TextBlock Text="2小时前 · 128 赞 · 36 评论"
+                                       Style="{StaticResource SubtitleText}" Margin="0,6,0,0" />
+                        </StackPanel>
+                    </Border>
+
+                    <Border Background="#16283F" Padding="10"
+                            BorderBrush="{StaticResource DividerBrush}" BorderThickness="1">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Border Background="{StaticResource TileBrush}"
+                                        Width="36" Height="36">
+                                    <TextBlock Text="海" Foreground="#FFFFFF"
+                                               HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                                <TextBlock Text="  海色电波" Foreground="#90CAF9" VerticalAlignment="Center" />
+                            </StackPanel>
+                            <TextBlock Text="发布接口已就绪，下次更新就能直接发动态啦。"
+                                       Foreground="#E3F2FD" Margin="0,8,0,0" TextWrapping="Wrap" />
+                            <TextBlock Text="昨天 · 56 赞 · 12 评论"
+                                       Style="{StaticResource SubtitleText}" Margin="0,6,0,0" />
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </controls:PanoramaItem>
+
+            <!-- ===== 我的 ===== -->
+            <controls:PanoramaItem Header="我的">
+                <StackPanel Margin="0,20,0,0" Width="440">
+                    <TextBlock Text="我的"
+                               Style="{StaticResource LightTitleText}" />
+                    <TextBlock x:Name="ProfileText"
+                               Text="未登录"
+                               Style="{StaticResource SubtitleText}"
+                               Margin="0,12,0,0" TextWrapping="Wrap" />
+                </StackPanel>
+            </controls:PanoramaItem>
+        </controls:Panorama>
+    </Grid>
+
+</phone:PhoneApplicationPage>

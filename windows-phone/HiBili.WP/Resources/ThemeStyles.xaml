@@ -1,0 +1,70 @@
+<!--
+  Hi!Bili - blue Metro theme resource dictionary.
+  SPDX-License-Identifier: GPL-3.0-or-later
+  Copyright (C) 2024 HiBili Team
+-->
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <!-- ===== Blue palette ===== -->
+    <Color x:Key="AccentColor">#1E88E5</Color>
+    <Color x:Key="TitleBarColor">#1565C0</Color>
+    <Color x:Key="DarkBackground">#0F1E30</Color>
+    <Color x:Key="LightBackground">#E3F2FD</Color>
+    <Color x:Key="TileBlue">#1976D2</Color>
+    <Color x:Key="SubtleText">#B3C6D9</Color>
+
+    <!-- ===== Brushes ===== -->
+    <SolidColorBrush x:Key="PhoneAccentBrush" Color="#1E88E5" />
+    <SolidColorBrush x:Key="TitleBarBrush" Color="#1565C0" />
+    <SolidColorBrush x:Key="PageBackgroundBrush" Color="#0F1E30" />
+    <SolidColorBrush x:Key="LightPageBackgroundBrush" Color="#E3F2FD" />
+    <SolidColorBrush x:Key="TileBrush" Color="#1976D2" />
+    <SolidColorBrush x:Key="PrimaryTextBrush" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="SubtleTextBrush" Color="#B3C6D9" />
+    <SolidColorBrush x:Key="DividerBrush" Color="#2A4A6B" />
+
+    <!-- ===== Metro button style (blue accent) ===== -->
+    <Style x:Key="BlueButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="#1E88E5" />
+        <Setter Property="Foreground" Value="#FFFFFF" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Padding" Value="24,10" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="22" />
+        <Setter Property="MinHeight" Value="48" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                            CornerRadius="0"
+                            Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- ===== Title text style (Segoe UI Light) ===== -->
+    <Style x:Key="LightTitleText" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Segoe UI Light" />
+        <Setter Property="FontSize" Value="44" />
+        <Setter Property="Foreground" Value="#FFFFFF" />
+    </Style>
+
+    <Style x:Key="SubtitleText" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="22" />
+        <Setter Property="Foreground" Value="#B3C6D9" />
+    </Style>
+
+    <!-- ===== Pivot header foreground ===== -->
+    <Style x:Key="BluePivotHeaderItem" TargetType="Primitives:PivotHeaderItem">
+        <Setter Property="Foreground" Value="#90CAF9" />
+    </Style>
+
+</ResourceDictionary>

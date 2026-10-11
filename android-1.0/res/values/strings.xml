@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This file is part of Hi！Bili.
+
+  Hi！Bili is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  Hi！Bili is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with Hi！Bili.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<resources>
+    <string name="app_name">Hi！Bili</string>
+
+    <string name="splash_tagline">B 站第三方客户端 · 经典版</string>
+
+    <string name="login_title">登录</string>
+    <string name="login_tab_qrcode">扫码登录</string>
+    <string name="login_tab_password">密码登录</string>
+    <string name="login_hint_username">手机号 / 邮箱</string>
+    <string name="login_hint_password">密码</string>
+    <string name="btn_login">登 录</string>
+    <string name="btn_refresh_qrcode">刷新二维码</string>
+    <string name="qrcode_wait">请使用哔哩哔哩手机端扫描二维码…</string>
+    <string name="qrcode_scanned">已扫码，请在手机上确认</string>
+
+    <string name="main_title">Hi！Bili</string>
+    <string name="main_status_not_login">未登录</string>
+    <string name="main_status_login_fmt">已登录：%1$s</string>
+    <string name="btn_go_login">去登录</string>
+    <string name="btn_publish_dynamic">发布文字动态</string>
+    <string name="btn_reply">发表评论</string>
+    <string name="btn_about">关于</string>
+
+    <string name="publish_title">发布动态</string>
+    <string name="publish_hint">说点什么…（纯文字动态）</string>
+    <string name="btn_publish">发 布</string>
+
+    <string name="reply_title">发表评论</string>
+    <string name="reply_hint_video_id">视频 AV 号（如 2）</string>
+    <string name="reply_hint_content">输入评论内容…</string>
+    <string name="btn_send_reply">发 表</string>
+
+    <string name="about_title">关于 Hi！Bili</string>
+    <string name="about_version_fmt">版本：1.0.0（Android 1.0 参考版）</string>
+    <string name="about_repo">项目地址：https://github.com/chumianyi/HiBili</string>
+    <string name="about_license">本程序依据 GPL 3.0 协议发布，是自由软件：
+您可以在遵守协议的前提下再分发和/或修改它。
+本程序按"原样"提供，不附带任何明示或暗示的担保。</string>
+    <string name="about_thanks_title">致谢</string>
+    <string name="about_thanks_body">感谢 PiliPlus 及 B 站社区的开源贡献，
+本参考版本借鉴了其接口设计思路。</string>
+    <string name="btn_logout">退出登录</string>
+    <string name="btn_back">返回</string>
+
+    <string name="toast_login_ok">登录成功</string>
+    <string name="toast_login_fail">登录失败，请重试</string>
+    <string name="toast_not_login">请先登录</string>
+    <string name="toast_publish_ok">发布成功</string>
+    <string name="toast_publish_fail">发布失败</string>
+    <string name="toast_logout_ok">已退出登录</string>
+    <string name="toast_network_err">网络错误，请检查连接</string>
+    <string name="toast_empty_input">内容不能为空</string>
+    <string name="dialog_exit_title">退出登录</string>
+    <string name="dialog_exit_msg">确定要退出当前账号吗？</string>
+    <string name="btn_ok">确定</string>
+    <string name="btn_cancel">取消</string>
+</resources>

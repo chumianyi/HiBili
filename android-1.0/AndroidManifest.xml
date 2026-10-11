@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This file is part of Hi！Bili.
+
+  Hi！Bili is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  Hi！Bili is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with Hi！Bili.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hibili.classic"
+    android:versionCode="1"
+    android:versionName="1.0.0">
+
+    <!-- 最低运行于 Android 1.0（API 1），参考版本 -->
+    <uses-sdk android:minSdkVersion="1" android:targetSdkVersion="4" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".HiBiliApp"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/HiBiliTheme">
+
+        <activity
+            android:name=".ui.SplashActivity"
+            android:label="@string/app_name"
+            android:configChanges="orientation|keyboardHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ui.LoginActivity"
+            android:label="@string/login_title"
+            android:configChanges="orientation|keyboardHidden" />
+        <activity android:name=".ui.MainActivity"
+            android:label="@string/app_name"
+            android:configChanges="orientation|keyboardHidden" />
+        <activity android:name=".ui.PublishActivity"
+            android:label="@string/publish_title"
+            android:configChanges="orientation|keyboardHidden" />
+        <activity android:name=".ui.ReplyActivity"
+            android:label="@string/reply_title"
+            android:configChanges="orientation|keyboardHidden" />
+        <activity android:name=".ui.AboutActivity"
+            android:label="@string/about_title"
+            android:configChanges="orientation|keyboardHidden" />
+
+    </application>
+</manifest>

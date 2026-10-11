@@ -1,0 +1,56 @@
+// This file is part of Hi！Bili
+// Copyright (C) 2026 chumianyi
+// SPDX-License-Identifier: GPL-3.0-or-later
+
+apply plugin: 'com.android.application'
+
+android {
+    namespace 'com.hibili.app'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.hibili.app"
+        minSdk 21
+        targetSdk 33
+        versionCode 50
+        versionName "5.0.0"
+        vectorDrawables.useSupportLibrary true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        resources {
+            excludes += ['META-INF/DEPENDENCIES', 'META-INF/LICENSE', 'META-INF/LICENSE.txt',
+                         'META-INF/license.txt', 'META-INF/NOTICE', 'META-INF/NOTICE.txt',
+                         'META-INF/notice.txt']
+        }
+    }
+}
+
+dependencies {
+    // AndroidX core (AppCompat only; we deliberately do NOT pull in Material Components
+    // to keep the APK on the classic View system and match the Miuix hand-drawn look).
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // Networking / JSON — versions chosen to run on minSdk 21.
+    implementation 'com.squareup.okhttp3:okhttp:3.12.13'
+    implementation 'com.google.code.gson:gson:2.8.9'
+
+    // QR generation only (core), no embedded scanner lib.
+    implementation 'com.google.zxing:core:3.4.1'
+}

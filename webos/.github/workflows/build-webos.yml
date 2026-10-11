@@ -1,0 +1,33 @@
+name: Build WebOS IPK
+
+on:
+  push:
+    paths:
+      - 'webos/**'
+      - '.github/workflows/build-webos.yml'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: webos
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install build tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ar tar gzip rsync
+
+      - name: Build IPK
+        run: bash tools/package-ipk.sh hibili-webos_1.0.0_all.ipk
+
+      - name: Upload IPK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: hibili-webos-ipk
+          path: webos/hibili-webos_1.0.0_all.ipk
+          if-no-files-found: warn

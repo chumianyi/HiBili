@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Hi!Bili Windows Phone application manifest.
+  SPDX-License-Identifier: GPL-3.0-or-later
+  Copyright (C) 2024 HiBili Team
+-->
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2014/deployment" AppPlatformVersion="8.1">
+  <App Author="HiBili Team"
+       BrillianceResourceId="91847640"
+       Description="Hi!Bili for Windows Phone - a Bilibili reference client (prototype)."
+       Genre="apps.normal"
+       ProductID="{8F3A2B1C-4D5E-6F70-8A9B-0C1D2E3F4A5B}"
+       Publisher="HiBili Team"
+       Version="1.0.0.0"
+       Title="Hi！Bili"
+       RuntimeType="Silverlight"
+       KapilFamily="">
+    <IconPath IsRelative="true" Path="Assets\ApplicationIcon.png" />
+    <Capabilities>
+      <Capability Name="ID_CAP_NETWORKING" />
+      <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
+      <Capability Name="ID_CAP_IDENTITY_DEVICE" />
+      <Capability Name="ID_CAP_MEDIALIB_PHOTO" />
+    </Capabilities>
+    <Requirements>
+      <Requirement Name="ID_REQ_MEMORY_300" />
+    </Requirements>
+    <ScreenResolutions>
+      <ScreenResolution Name="WVGA" />
+      <ScreenResolution Name="WXGA" />
+      <ScreenResolution Name="720P" />
+    </ScreenResolutions>
+    <Tasks>
+      <DefaultTask Name="_default" NavigationPage="Views/SplashPage.xaml" />
+    </Tasks>
+    <Tokens>
+      <PrimaryToken TokenID="HiBiliToken" TaskName="_default">
+        <TemplateType5>
+          <BackgroundImageURI IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</BackgroundImageURI>
+          <Count>0</Count>
+          <Title>Hi！Bili</Title>
+        </TemplateType5>
+      </PrimaryToken>
+    </Tokens>
+  </App>
+</Deployment>

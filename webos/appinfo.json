@@ -1,0 +1,19 @@
+{
+  "id": "com.hibili.webos",
+  "version": "1.0.0",
+  "vendor": "HiBili Team",
+  "type": "web",
+  "main": "index.html",
+  "title": "Hi！Bili",
+  "icon": "assets/icon.png",
+  "largeIcon": "assets/icon-128.png",
+  "requiredPermissions": ["network"],
+  "mimeTypes": [],
+  "uiRevision": "2.0",
+  "disableBackHistoryAPI": false,
+  "enyoVersion": "2.5",
+  "homepage": "https://github.com/chumianyi/HiBili",
+  "description": "Hi!Bili WebOS reference build - a Bilibili client prototype for LG/Open webOS",
+  "copyright": "Copyright (C) 2024 HiBili Team",
+  "license": "GPL-3.0-or-later"
+}

@@ -1,0 +1,79 @@
+/*
+ * Hi！Bili - WebOS Reference Build
+ * Copyright (C) 2024 HiBili Team
+ * Licensed under GPL-3.0-or-later.
+ *
+ * Base reset / buttons / form controls for WebOS (WebKit).
+ */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: "Prelude", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #E1F5FE;
+  color: #01579B;
+  -webkit-user-select: none;
+  user-select: none;
+  overflow: hidden;
+}
+
+#viewHost {
+  width: 100%;
+  height: 100%;
+}
+
+/* Buttons */
+.btn-primary, .btn-ghost, .btn-danger {
+  display: inline-block;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-family: inherit;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: opacity .15s, transform .05s;
+}
+.btn-primary:active, .btn-ghost:active, .btn-danger:active { transform: scale(0.98); }
+
+.btn-primary {
+  background: #03A9F4;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(3,169,244,.35);
+}
+.btn-primary:hover { background: #0288D1; }
+
+.btn-ghost {
+  background: transparent;
+  color: #0288D1;
+  border: 1px solid #0288D1;
+}
+.btn-ghost:hover { background: rgba(3,169,244,.1); }
+
+.btn-danger { background: #E53935; color: #fff; }
+.btn-danger:hover { background: #C62828; }
+
+/* Form */
+.form-row { margin-bottom: 14px; }
+.form-label { font-size: 13px; color: #0288D1; margin-bottom: 4px; }
+.form-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #B3E5FC;
+  border-radius: 6px;
+  font-size: 15px;
+  font-family: inherit;
+  background: #fff;
+  color: #01579B;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.form-input:focus {
+  outline: none;
+  border-color: #03A9F4;
+  box-shadow: 0 0 0 2px rgba(3,169,244,.2);
+}
+.form-error { color: #E53935; font-size: 13px; margin: 8px 0; }
