@@ -22,7 +22,7 @@ jobs:
       - name: Install build tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y ar tar gzip rsync
+          sudo apt-get install -y rsync
 
       - name: Build IPK
         run: bash tools/package-ipk.sh hibili-webos_1.0.0_all.ipk

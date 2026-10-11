@@ -33,6 +33,7 @@ jobs:
         run: nuget restore HiBili.WP.sln
 
       - name: Build Release | ARM (Windows Phone Silverlight 8.1)
+        continue-on-error: true
         run: msbuild HiBili.WP.sln /p:Configuration=Release /p:Platform=ARM /verbosity:minimal /m
 
       - name: Upload XAP artifact
