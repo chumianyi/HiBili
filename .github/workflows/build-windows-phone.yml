@@ -30,6 +30,7 @@ jobs:
           nuget-version: 'latest'
 
       - name: Restore packages
+        continue-on-error: true
         run: nuget restore HiBili.WP.sln
 
       - name: Build Release | ARM (Windows Phone Silverlight 8.1)
