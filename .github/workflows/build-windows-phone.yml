@@ -1,25 +1,14 @@
+# This file is part of Hi！Bili.
+# SPDX-License-Identifier: GPL-3.0-or-later
 name: build-windows-phone
-
-# Windows Phone 8.1 Silverlight projects must be built on Windows with the
-# Windows Phone 8.1 SDK (ships with Visual Studio 2015 / 2017). The hosted
-# windows-latest runner does NOT carry that legacy SDK out of the box, so
-# this workflow restores the VS 2015/2017 Build Tools and the WP 8.1 SDK
-# components, then runs MSBuild against the solution.
-#
-# If the legacy SDK components are unavailable on a given runner image, the
-# build step is allowed to fail loudly; the source tree itself is still a
-# complete, openable Visual Studio 2015 solution.
 
 on:
   push:
-    branches: [ master, main ]
+    branches: [ main ]
     paths:
       - 'windows-phone/**'
       - '.github/workflows/build-windows-phone.yml'
-  pull_request:
-    branches: [ master, main ]
-    paths:
-      - 'windows-phone/**'
+  workflow_dispatch:
 
 jobs:
   build:
@@ -44,10 +33,6 @@ jobs:
         run: nuget restore HiBili.WP.sln
 
       - name: Build Release | ARM (Windows Phone Silverlight 8.1)
-        # Requires the "Windows Phone 8.1 SDK" / "Windows 8.1 SDK" workload.
-        # On windows-latest these are typically pre-installed with VS 2019/2022
-        # via the "Microsoft.VisualStudio.Workload.VCTools" +
-        # "Microsoft.VisualStudio.Component.WindowsPhone81SDK" component.
         run: msbuild HiBili.WP.sln /p:Configuration=Release /p:Platform=ARM /verbosity:minimal /m
 
       - name: Upload XAP artifact

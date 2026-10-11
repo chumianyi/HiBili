@@ -6,11 +6,17 @@ name: build-android-5.0
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'android-5.0/**'
+      - '.github/workflows/build-android-5.0.yml'
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: android-5.0
 
     steps:
       - name: Checkout
@@ -27,13 +33,18 @@ jobs:
         with:
           packages: 'platforms;android-33 build-tools;33.0.0'
 
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '7.5.1'
+
       - name: Cache Gradle
         uses: actions/cache@v3
         with:
           path: |
             ~/.gradle/caches
             ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
+          key: ${{ runner.os }}-gradle-${{ hashFiles('android-5.0/**/*.gradle*') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
 
@@ -47,10 +58,7 @@ jobs:
             -keyalg RSA -keysize 2048 -validity 10000
 
       - name: Build release APK
-        run: |
-          chmod +x ./gradlew || true
-          # Use gradle from cache / wrapper; wrapper jar is not shipped, so invoke gradle directly.
-          gradle assembleRelease --no-daemon --stacktrace
+        run: gradle assembleRelease --no-daemon --stacktrace
 
       - name: Sign APK (debug keystore)
         run: |
@@ -65,5 +73,5 @@ jobs:
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
-          name: HiBili-release-apk
-          path: app/build/outputs/apk/release/HiBili-release.apk
+          name: HiBili-android5-release-apk
+          path: android-5.0/app/build/outputs/apk/release/HiBili-release.apk

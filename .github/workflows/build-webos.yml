@@ -1,4 +1,6 @@
-name: Build WebOS IPK
+# This file is part of Hi！Bili.
+# SPDX-License-Identifier: GPL-3.0-or-later
+name: build-webos
 
 on:
   push:
