@@ -9,8 +9,9 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        // AGP 7.0.4 is the last line that still reliably supports minSdk 21 + JDK 11
-        classpath 'com.android.tools.build:gradle:7.0.4'
+        // AGP 7.4.2 supports modern SDK platform source.properties format
+        // while retaining minSdk 21 compatibility.
+        classpath 'com.android.tools.build:gradle:7.4.2'
     }
 }
 
